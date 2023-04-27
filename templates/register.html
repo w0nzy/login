@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Üye Kayıdı</title>
+</head>
+<body>
+    <div class="container">
+    <form action="" method="POST">
+        <label>Kullanıcı Adı</label><br>
+        <input type="text" name = "username" value = ""{{ request.form.username }}">
+        <br>
+        <label>Şifre</label><br>
+        <input type="password" name = "pwd" value = "{{ request.form.pwd }}">
+        <button type="btn btn-primary">Giriş</button>
+    </form>
+    {% if error %}
+        <p class="error"><strong>Hata:</strong> {{ error }}
+    {% endif %}
+        </div>
+    <br>
+    <a href=" {{ url_for('login')}} ">Zaten Üyemisiniz</a>
+</body>
+</html>
